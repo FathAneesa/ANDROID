@@ -1,7 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    android:background="#FFFFFF">
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -9,73 +10,86 @@
         android:orientation="vertical"
         android:padding="16dp">
 
-    <!-- Name -->
-<EditText
-android:id="@+id/etName"
-android:layout_width="match_parent"
-android:layout_height="wrap_content"
-android:hint="Enter Name" />
+        <!-- Title -->
+        <TextView
+            android:id="@+id/tvTitle"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="REGISTRATION FORM"
+            android:textSize="24sp"
+            android:textStyle="bold"
+            android:gravity="center"
+            android:padding="16dp"
+            android:textColor="#000000" />
 
-    <!-- Email -->
-<EditText
-android:id="@+id/etEmail"
-android:layout_width="match_parent"
-android:layout_height="wrap_content"
-android:hint="Enter Email"
-android:inputType="textEmailAddress" />
+        <!-- Name -->
+        <EditText
+            android:id="@+id/etName"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Enter Name" />
 
-    <!-- Password -->
-<EditText
-android:id="@+id/etPassword"
-android:layout_width="match_parent"
-android:layout_height="wrap_content"
-android:hint="Enter Password"
-android:inputType="textPassword" />
+        <!-- Email -->
+        <EditText
+            android:id="@+id/etEmail"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Enter Email"
+            android:inputType="textEmailAddress" />
 
-    <!-- Gender -->
-<RadioGroup
-android:id="@+id/genderGroup"
-android:layout_width="match_parent"
-android:layout_height="wrap_content"
-android:orientation="horizontal"
-android:layout_marginTop="10dp">
+        <!-- Password -->
+        <EditText
+            android:id="@+id/etPassword"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Enter Password"
+            android:inputType="textPassword" />
 
-<RadioButton
-    android:id="@+id/rbMale"
-    android:layout_width="wrap_content"
-    android:layout_height="wrap_content"
-    android:text="Male" />
+        <!-- Gender -->
+        <RadioGroup
+            android:id="@+id/genderGroup"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_marginTop="10dp">
 
-<RadioButton
-    android:id="@+id/rbFemale"
-    android:layout_width="wrap_content"
-    android:layout_height="wrap_content"
-    android:text="Female" />
-</RadioGroup>
+            <RadioButton
+                android:id="@+id/rbMale"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Male" />
 
-    <!-- Terms Checkbox -->
+            <RadioButton
+                android:id="@+id/rbFemale"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Female" />
+        </RadioGroup>
 
-        <!-- Submit Button -->
-
-
+        <!-- Switch -->
         <Switch
             android:id="@+id/switch1"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="New Member" />
+            android:text="New Member"
+            android:layout_marginTop="10dp" />
 
+        <!-- Terms Checkbox -->
         <CheckBox
             android:id="@+id/cbTerms"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="I accept Terms and Conditions" />
+            android:text="I accept Terms and Conditions"
+            android:layout_marginTop="10dp" />
 
+        <!-- Submit Button -->
         <Button
             android:id="@+id/btnSubmit"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:text="Submit"
             android:layout_marginTop="20dp"
-            android:text="Submit" />
-
+            android:backgroundTint="#6200EE"
+            android:textColor="#FFFFFF" />
     </LinearLayout>
-    </ScrollView>
+</ScrollView>
