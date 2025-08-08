@@ -12,7 +12,7 @@ public class MainActivity extends AppCompatActivity {
     EditText etName, etEmail, etPassword;
     RadioButton rbMale, rbFemale;
     CheckBox cbTerms;
-    Switch switch1; // 🔄 Declare the Switch
+    Switch switch1;
     Button btnSubmit;
 
     @Override
@@ -20,17 +20,17 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        // Linking UI controls
+        // Linking UI elements
         etName = findViewById(R.id.etName);
         etEmail = findViewById(R.id.etEmail);
         etPassword = findViewById(R.id.etPassword);
         rbMale = findViewById(R.id.rbMale);
         rbFemale = findViewById(R.id.rbFemale);
         cbTerms = findViewById(R.id.cbTerms);
-        switch1 = findViewById(R.id.switch1); // 🔄 Link the Switch
+        switch1 = findViewById(R.id.switch1);
         btnSubmit = findViewById(R.id.btnSubmit);
 
-        // Set button click listener
+        // Button click listener
         btnSubmit.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -41,19 +41,22 @@ public class MainActivity extends AppCompatActivity {
 
     private void validateForm() {
         // Name Validation
-        if (TextUtils.isEmpty(etName.getText().toString())) {
+        String name = etName.getText().toString().trim();
+        if (TextUtils.isEmpty(name)) {
             etName.setError("Name is required");
             return;
         }
 
         // Email Validation
-        if (!Patterns.EMAIL_ADDRESS.matcher(etEmail.getText().toString()).matches()) {
+        String email = etEmail.getText().toString().trim();
+        if (!Patterns.EMAIL_ADDRESS.matcher(email).matches()) {
             etEmail.setError("Enter a valid email");
             return;
         }
 
         // Password Validation
-        if (etPassword.getText().toString().length() < 6) {
+        String password = etPassword.getText().toString();
+        if (password.length() < 6) {
             etPassword.setError("Password must be at least 6 characters");
             return;
         }
@@ -64,20 +67,19 @@ public class MainActivity extends AppCompatActivity {
             return;
         }
 
-        // Terms Checkbox Validation
+        // Terms & Conditions Validation
         if (!cbTerms.isChecked()) {
             Toast.makeText(this, "Please accept Terms & Conditions", Toast.LENGTH_SHORT).show();
             return;
         }
 
-        // 🔄 Switch Validation
+        // Switch Validation
         if (!switch1.isChecked()) {
-            Toast.makeText(this, "Switch is not enabled", Toast.LENGTH_SHORT).show();
+            Toast.makeText(this, "Please enable the switch (New Member)", Toast.LENGTH_SHORT).show();
             return;
         }
 
-        // If all validations pass
+        // All validations passed
         Toast.makeText(this, "Form Submitted Successfully!", Toast.LENGTH_LONG).show();
     }
 }
-
